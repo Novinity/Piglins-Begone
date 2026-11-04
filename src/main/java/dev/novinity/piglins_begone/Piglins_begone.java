@@ -28,16 +28,18 @@ public class Piglins_begone {
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    @SubscribeEvent
-    public void onFinalizeSpawn(MobSpawnEvent.FinalizeSpawn event) {
-        if (event.getSpawnType() != MobSpawnType.STRUCTURE || (event.getEntity().getType() != EntityType.ZOMBIFIED_PIGLIN && event.getEntity().getType() != EntityType.ZOGLIN)) return;
+//    @SubscribeEvent
+//    public void onFinalizeSpawn(MobSpawnEvent.FinalizeSpawn event) {
+//        if (event.getSpawnType() != MobSpawnType.STRUCTURE || (event.getEntity().getType() != EntityType.ZOMBIFIED_PIGLIN && event.getEntity().getType() != EntityType.ZOGLIN)) return;
+//
+//        ServerLevel level = event.getLevel().getLevel();
+//        if (level.dimension() != Level.OVERWORLD) return;
+//
+//        BlockPos pos = BlockPos.containing(event.getX(), event.getY(), event.getZ());
+//        if (!level.getBlockState(pos).is(Blocks.NETHER_PORTAL)) return;
+//
+//        event.setSpawnCancelled(true);
+//    }
 
-        ServerLevel level = event.getLevel().getLevel();
-        if (level.dimension() != Level.OVERWORLD) return;
-
-        BlockPos pos = BlockPos.containing(event.getX(), event.getY(), event.getZ());
-        if (!level.getBlockState(pos).is(Blocks.NETHER_PORTAL)) return;
-
-        event.setSpawnCancelled(true);
-    }
+    public static Logger getLogger() {return LOGGER;}
 }
